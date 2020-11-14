@@ -7,7 +7,8 @@ const commonConfig = require('./webpack.common');
 const prodConfig = {
   mode: 'production',
   output: {
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
+    publicPath: '/marketing/latest/' // needed to find main.js in s3
   },
   plugins: [
     new ModuleFederationPlugin({
